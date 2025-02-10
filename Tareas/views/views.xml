@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record id="tareas.list" model="ir.ui.view">
+            <field name="name">tareas list</field>
+            <field name="model">tareas.tareas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="tareas.tareas_action">
+            <field name="name">Tareas</field>
+            <field name="res_model">tareas.tareas</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="tareas.menu_root" name="Tareas"/>
+        <menuitem id="tareas.menu_tareas_1" name="Menu tareas" parent="tareas.menu_root" action="tareas.tareas_action"/>
+        <menuitem name="Lista tareas" id="tareas.menu_1_list" parent="tareas.menu_1"
+            action="tareas.action_window"/>
+
+    </data>
+</odoo>
